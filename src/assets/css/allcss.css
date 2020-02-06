@@ -1,0 +1,15 @@
+.hovering:hover{
+    color: #85077e;
+}
+.colorized{
+    color: #85077e
+}
+.icon-size{
+    font-size: 400%;
+}
+input::-moz-focus-inner { 
+    border: 0; 
+}
+a {
+    outline: 0;
+ }
