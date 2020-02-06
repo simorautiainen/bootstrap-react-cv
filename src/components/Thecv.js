@@ -1,6 +1,4 @@
 import React, {Component} from 'react';
-import kuva from '../assets/img/profile.jpg';
-import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 import dataeng from '../assets/info.json'
 import datafin from '../assets/infofin.json'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -163,7 +161,7 @@ class AboutSite extends Component {
       <p className="lead mb-5">
         This site was made with startbootstrap <a href="https://startbootstrap.com/themes/resume/">resume theme</a>.
         I also used react to make this work with json CV, so I could switch between languages more easily.
-        I have this site on <a href="">Github</a>
+        I have this site on <a href="https://github.com/simorautiainen/bootstrap-react-cv">Github</a>
       </p>
       </div>
       </section>
@@ -177,7 +175,23 @@ class TheCv extends Component {
   constructor(props){
     super(props);
     this.state = {
-        isEng: false
+        isEng: false,
+        list_of_titles_eng : [
+          "about",
+          "experience",
+          "education",
+          "skills",
+          "interests",
+          "aboutsite"
+      ],
+      list_of_titles_fin : [
+        "perustiedot",
+        "työkokemus",
+        "koulutus",
+        "taidot",
+        "mielenkiinnon kohteet",
+        "tietojasivusta"
+    ]
     };
   }
   handleSwitchChange(){
@@ -190,20 +204,22 @@ class TheCv extends Component {
       return (
       <div>
       <Navigate
+      hrefs = {this.state.list_of_titles_eng} //This is for navigation
+      titles = {this.state.isEng ? this.state.list_of_titles_fin : this.state.list_of_titles_eng}
       handleSwitch = {() => this.handleSwitchChange()}
       />
-  <div className="container-fluid p-0">
-    <Basics data={this.state.isEng ? datafin : dataeng}/>
-  <hr className="m-0"/>
+      <div className="container-fluid p-0">
+      <Basics data={this.state.isEng ? datafin : dataeng}/>
+      <hr className="m-0"/>
 
-  <section className="resume-section p-3 p-lg-5 d-flex justify-content-center" id="experience">
-    <div className="w-100">
+      <section className="resume-section p-3 p-lg-5 d-flex justify-content-center" id="experience">
+      <div className="w-100">
       <h2 className="mb-5">Experience</h2>
       <Experience data={this.state.isEng ? datafin : dataeng}/>
-    </div>
-  </section>
+      </div>
+      </section>
 
-  <hr className="m-0"/>
+      <hr className="m-0"/>
 
   <section className="resume-section p-3 p-lg-5 d-flex align-items-center" id="education">
     <div className="w-100">
@@ -226,7 +242,7 @@ class TheCv extends Component {
 
   <Interest data={this.state.isEng ? datafin : dataeng}/>
 
-
+  <AboutSite />
     </div>
     </div>
         );

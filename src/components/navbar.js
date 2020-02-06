@@ -1,9 +1,7 @@
 import React,{Component} from 'react';
 import kuva from '../assets/img/profile.jpg';
 import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
-import datatest from '../assets/info.json'
-import {Navbar,Nav,NavDropdown,Form,FormControl} from 'react-bootstrap'
-import Scrollspy from 'react-scrollspy'
+import {Navbar,Nav} from 'react-bootstrap'
 import {Container,Row,Col} from 'react-bootstrap';
 import BootstrapSwitchButton from 'bootstrap-switch-button-react'
 
@@ -16,16 +14,17 @@ class Navigate extends Component {
                 "experience",
                 "education",
                 "skills",
-                "interests"
-                
-            ]
+                "interests",
+                "aboutsite"
+            ],
+            
         };
     }
     
     render() {
-        const titles = this.state.list_of_titles.map((title,index) =>
+        const titles = this.props.titles.map((title,index) =>
         <Container style={{paddingRight: 0, marginRight: 0}} className="nav-item justify-content-end">
-        <Nav.Link as={Link} eventKey={index} href="#" activeClass="active" style={{cursor:"pointer"}} className="nav-link" spy={true} to={title} smooth={"easeInOutQuart"} duration={1500}>{title}</Nav.Link>
+        <Nav.Link as={Link} eventKey={index} href="#" activeClass="active" style={{cursor:"pointer"}} className="nav-link" spy={true} to={this.props.hrefs[index]} smooth={"easeInOutQuart"} duration={1500}>{title}</Nav.Link>
         </Container>
         );
         return(

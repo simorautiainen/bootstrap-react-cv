@@ -23,3 +23,7 @@ yarn-debug.log*
 yarn-error.log*
 info.json
 infofin.json
+Dockerfile
+.dockerignore
+package-lock.json
+yarn.lock
