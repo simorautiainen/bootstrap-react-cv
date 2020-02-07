@@ -101,12 +101,11 @@ class Interest extends Component {
     );
 
     return (
-      <section className="resume-section p-3 p-lg-5 d-flex align-items-center" id="interests">
-    <div className="w-100">
-      <h2 className="mb-5">Interests</h2>
+
+      <div>
       {interest}
-    </div>
-  </section>
+      </div>
+
     );
   
 }
@@ -142,7 +141,6 @@ class Skill extends Component {
     );
     return (
       <div>
-      <h2 className="mb-5">Skills</h2>
       {allSkills}
       </div>
     );
@@ -152,22 +150,12 @@ class Skill extends Component {
 class AboutSite extends Component {
   render(){
     return(
-      <div>
-      <hr className="m-0"/>
-
-      <section className="resume-section p-3 p-lg-5 d-flex align-items-center" id="aboutsite">
-      <div className="w-100">
-      <h2 className="mb-5">About this site</h2>
+      
       <p className="lead mb-5">
         This site was made with startbootstrap <a href="https://startbootstrap.com/themes/resume/">resume theme</a>.
         I also used react to make this work with json CV, so I could switch between languages more easily.
         I have this site on <a href="https://github.com/simorautiainen/bootstrap-react-cv">Github</a>
       </p>
-      </div>
-      </section>
-
-
-      </div>
     )
   }
 }
@@ -209,12 +197,13 @@ class TheCv extends Component {
       handleSwitch = {() => this.handleSwitchChange()}
       />
       <div className="container-fluid p-0">
+      
       <Basics data={this.state.isEng ? datafin : dataeng}/>
       <hr className="m-0"/>
 
       <section className="resume-section p-3 p-lg-5 d-flex justify-content-center" id="experience">
       <div className="w-100">
-      <h2 className="mb-5">Experience</h2>
+      <h2 className="mb-5">{this.state.isEng ? this.state.list_of_titles_fin[1] : this.state.list_of_titles_eng[1]}</h2>
       <Experience data={this.state.isEng ? datafin : dataeng}/>
       </div>
       </section>
@@ -223,7 +212,7 @@ class TheCv extends Component {
 
   <section className="resume-section p-3 p-lg-5 d-flex align-items-center" id="education">
     <div className="w-100">
-      <h2 className="mb-5">Education</h2>
+      <h2 className="mb-5">{this.state.isEng ? this.state.list_of_titles_fin[2] : this.state.list_of_titles_eng[2]}</h2>
 
       <Education data={this.state.isEng ? datafin : dataeng}/>
 
@@ -233,16 +222,29 @@ class TheCv extends Component {
   <hr className="m-0"/>
 
   <section className="resume-section p-3 p-lg-5 d-flex align-items-center" id="skills">
- 
+    <div >
+    <h2 className="mb-5">{this.state.isEng ? this.state.list_of_titles_fin[3] : this.state.list_of_titles_eng[3]}</h2>
       <Skill data={this.state.isEng ? datafin : dataeng}/>
+    </div>
+  </section>
 
+  <hr className="m-0"/>
+  <section className="resume-section p-3 p-lg-5 d-flex align-items-center" id="interests">
+    <div className="w-100">
+      <h2 className="mb-5">{this.state.isEng ? this.state.list_of_titles_fin[4] : this.state.list_of_titles_eng[4]}</h2>
+  <Interest data={this.state.isEng ? datafin : dataeng}/>
+  </div>
   </section>
 
   <hr className="m-0"/>
 
-  <Interest data={this.state.isEng ? datafin : dataeng}/>
-
-  <AboutSite />
+      <section className="resume-section p-3 p-lg-5 d-flex align-items-center" id="aboutsite">
+      <div className="w-100">
+      <h2 className="mb-5">{this.state.isEng ? this.state.list_of_titles_fin[5] : this.state.list_of_titles_eng[5]}</h2>
+      <AboutSite />
+      </div>
+      </section>
+      
     </div>
     </div>
         );
