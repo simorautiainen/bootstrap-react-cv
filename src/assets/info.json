@@ -1,0 +1,60 @@
+{
+  "basics": {
+    "name": "Firstname Lastname",
+    "label": "Develpoer",
+    "email": "example.com",
+    "phone": "+123 45 6789",
+    "website": "example.com",
+    "summary": "Aspiring new talent finding example jobs",
+    "location": "In somewhere",
+    "profiles": [{
+      "network": "linkedin",
+      "username": "example",
+      "url": "https://www.linkedin.com/in/example"
+    },{"network": "github",
+      "username": "example",
+      "url": "https://github.com/example"
+    }]
+
+  },
+  "work": [{
+    "company": "example job",
+    "position": "doing examples",
+    "website": "example.com",
+    "startDate": "2019-09",
+    "endDate": "Present",
+    "summary": "Doing the things I like"
+  }],
+  "education": [{
+    "institution": "Example school",
+    "area": "example engineering",
+    "studyType": "Bachelor",
+    "startDate": "2018-08",
+    "endDate": "Present",
+    "info": ""
+  }],
+  "skills": [{
+    "name": "Programming",
+    "level": "Personal strongest",
+    "keywords": [
+      "Python",
+      "CPlusPlus",
+      "C"
+    ]
+  }],
+  "languages": [{
+    "language": "Finnish",
+    "fluency": "Native"
+  },{
+    "language": "English",
+    "fluency": "Fluent"
+  }],
+  "interests": [{
+    "name": "Physical activities",
+    "info": "I do example physical."
+  }],
+  "references": [{
+    "name": "Jane Doe",
+    "reference": "Reference..."
+  }]
+}
